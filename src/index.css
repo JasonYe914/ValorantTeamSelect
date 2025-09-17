@@ -1,0 +1,14 @@
+/* Reset + Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background-color: #ffe5e5; /* light red-pink background */
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
