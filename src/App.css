@@ -1,167 +1,180 @@
+/* Reset & body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
 /* Header */
-.header {
-  background-color: #ff6b6b; /* lighter red */
-  height: 90px;              /* bigger header */
-  line-height: 90px;         /* center text vertically */
-  padding: 0 1rem;
-  width: 100%;
+.app-header {
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  color: white;
+  padding: 25px 20px;
   text-align: center;
-  font-size: 2rem;           /* larger title */
+  font-size: 2rem;
   font-weight: bold;
-  letter-spacing: 2px;
-  color: #fff;
-  border-bottom: 3px solid #e63946;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-/* Main app container */
-.app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 120px; /* more space below bigger header */
-}
-
-/* Search Section */
-.search-section {
-  width: 100%;
-  max-width: 1000px;
-  margin: 40px auto; /* push search bar down further */
-  text-align: center;
-}
-
-/* Bigger Search Bar */
-.search-bar {
+/* Navigation */
+nav {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 30px;
+  gap: 20px;
+  background-color: #222;
+  padding: 12px 0;
 }
 
-.search-bar select,
-.search-bar input {
-  padding: 16px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #f28482;
+nav a {
   color: #fff;
-  min-width: 220px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #00c6ff;
+}
+
+/* Page Container */
+.page-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Two-column layout for SearchPage */
+.search-team-layout {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Left: Search + Results */
+.left-panel {
+  flex: 2;
+}
+
+/* Right: Fantasy Team */
+.right-panel {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar input, .search-bar select {
+  padding: 8px;
+  font-size: 16px;
+  flex: 1;
 }
 
 .search-bar button {
-  padding: 16px 22px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #e63946;
+  padding: 8px 16px;
+  background-color: #0077ff;
   color: #fff;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s;
+  font-weight: bold;
 }
 
 .search-bar button:hover {
-  background-color: #c81d25;
+  background-color: #005bbb;
 }
 
-/* Results Section */
-.results {
+/* Results Grid */
+.results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
 }
 
 .player-card {
-  background-color: #f28482;
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s, box-shadow 0.2s;
   text-align: center;
 }
 
 .player-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.player-card h2 {
-  margin-bottom: 12px;
-  font-size: 1.3rem;
-  color: #fff;
-}
-
-.player-card button {
+.add-btn {
   margin-top: 10px;
-  width: 100%;
-  padding: 10px;
-  background-color: #e63946;
+  padding: 6px 12px;
+  background-color: #28a745;
+  color: #fff;
   border: none;
   border-radius: 6px;
-  color: #fff;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-.player-card button:hover {
-  background-color: #c81d25;
+.add-btn:hover {
+  background-color: #1e7e34;
 }
 
-/* Team Section (BOTTOM BAR) */
+/* Fantasy Team */
 .team-section {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f28482;
-  padding: 15px 25px;
-  border-top: 3px solid #e63946;
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.team-section h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.team-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.team-list li {
+  margin-bottom: 8px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
-  box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+}
+
+/* PlayerStats Table */
+.table-wrapper {
   overflow-x: auto;
 }
 
-.team-player {
-  background: #e63946;
-  padding: 10px 15px;
-  border-radius: 8px;
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stats-table th, .stats-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.stats-table th {
+  background-color: #0077ff;
   color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
 }
 
-.team-player button {
-  background: #c81d25;
-  border: none;
-  border-radius: 6px;
-  padding: 5px 8px;
-  cursor: pointer;
-  color: #fff;
-  transition: 0.2s;
-}
-
-.team-player button:hover {
-  background: #000;
-}
-
-.team-ready {
-  font-weight: bold;
-  color: #3ba55c;
-}
-
-.empty-team {
-  color: #fff;
+.stats-table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
