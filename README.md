@@ -1,3 +1,8 @@
+This website is based on the team selection feature in Fifa. It gets valorant players from the database and allows the user to make their "perfect" Valorant team
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
